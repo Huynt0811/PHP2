@@ -11,7 +11,7 @@ $target_directory = 'uploads/' . $current_month_year . '/';
                         <h3 class="panel-title"><?= $item['name'] ?? '' ?></h3>
                     </div>
                     <div class="panel-body">
-                        <?= $target_directory . $item['img'] ?>
+                        <?=$target_directory.$item['img'] ?>
                         <div class="box-img">
                             <img src="../../../../uploads/2023_04/<?=$item['img'] ?>" class="img-thumbnail" alt="">
                         </div>

@@ -67,8 +67,7 @@ class ProductController extends BaseController
         ];
         // var_dump($data);die();
         $upload = new UploadController();
-        return $upload->postUpload($_FILES['avatar']);
-        die();
+        $upload->postUpload($_FILES['avatar']);
         $isValid = true;
         if (empty($_POST['name']) || empty($_POST['price'])) {
             $isValid = false;

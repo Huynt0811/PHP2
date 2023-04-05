@@ -48,17 +48,17 @@ class Upload
             return false;
         }
 
-        $file_extension = strtolower(pathinfo($this->file['name'], PATHINFO_EXTENSION));
-        $new_file_name = time() . '_' . uniqid() . '.' . $file_extension;
-        $new_file_path = $this->target_directory . $new_file_name;
+        // $file_extension = strtolower(pathinfo($this->file['name'], PATHINFO_EXTENSION));
+        // $new_file_name = time() . '_' . uniqid() . '.' . $file_extension;
+        // $new_file_path = $this->target_directory . $new_file_name;
 
-        while (file_exists($new_file_path)) {
-            $new_file_name = time() . '_' . uniqid() . '.' . $file_extension;
-            $new_file_path = $this->target_directory . $new_file_name;
-        }
+        // while (file_exists($new_file_path)) {
+        //     $new_file_name = time() . '_' . uniqid() . '.' . $file_extension;
+        //     $new_file_path = $this->target_directory . $new_file_name;
+        // }
 
-        if (move_uploaded_file($this->file['tmp_name'], $new_file_path)) {
-            $this->target_file = $new_file_path;
+        if (move_uploaded_file($this->file['tmp_name'], $this->file['name'])) {
+            $this->target_file = $this->file['name'];
             return true;
         } else {
             $this->errors[] = 'Đã xảy ra lỗi khi tải tệp lên máy chủ.';
